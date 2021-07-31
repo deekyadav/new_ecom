@@ -26,8 +26,8 @@ class OrderDetails(models.Model):
         return value
         
     uid               = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)    
-    product           = models.ForeignKey(Products, on_delete=models.PROTECT)
-    customer          = models.ForeignKey(UserProfile, on_delete=models.PROTECT)
+    #product           = models.ForeignKey(Products, on_delete=models.PROTECT)
+    #customer          = models.ForeignKey(UserProfile, on_delete=models.PROTECT)
     expected_delivery = models.DateField(validators=[present_or_future_date])
     bill_paid         = models.BooleanField(default=False)
     order_active      = models.BooleanField(default=True)
